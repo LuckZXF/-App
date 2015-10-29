@@ -11,18 +11,10 @@ import UIKit
 class thirdView : UIViewController {
     
     @IBAction func exitbtn(sender: AnyObject) {
-        
-        
-        
          test = nil
         test0 = nil
         test2 = nil
         test3 = nil
-        
-        ab
-
-        
-        
         test4 = nil
         test5 = nil
         count1 = nil
@@ -42,10 +34,4 @@ class thirdView : UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    
-    
-    
-    
 }
