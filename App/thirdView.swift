@@ -15,6 +15,10 @@ class thirdView : UIViewController {
         test0 = nil
         test2 = nil
         test3 = nil
+        
+        
+        
+        
         test4 = nil
         test5 = nil
         count1 = nil
