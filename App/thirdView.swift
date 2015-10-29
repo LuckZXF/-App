@@ -19,7 +19,7 @@ class thirdView : UIViewController {
         test2 = nil
         test3 = nil
         
-        
+        b
         
         
         test4 = nil
