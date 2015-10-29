@@ -29,7 +29,6 @@
 		B05720711AD3A197003738B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05720701AD3A197003738B8 /* AppDelegate.swift */; };
 		B05720731AD3A197003738B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05720721AD3A197003738B8 /* ViewController.swift */; };
 		B057207B1AD3A197003738B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05720791AD3A197003738B8 /* LaunchScreen.xib */; };
-		B05720871AD3A197003738B8 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05720861AD3A197003738B8 /* AppTests.swift */; };
 		B05A5B5C1B28315800ACD7EF /* writingmessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A5B5B1B28315800ACD7EF /* writingmessage.swift */; };
 		B05A5B5E1B28316B00ACD7EF /* writingtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A5B5D1B28316B00ACD7EF /* writingtable.swift */; };
 		B05A5B601B28317D00ACD7EF /* writingtable2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A5B5F1B28317D00ACD7EF /* writingtable2.swift */; };
@@ -92,6 +91,11 @@
 		B0BCD5B81B2E008B00F9782A /* writingsearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BCD5B71B2E008B00F9782A /* writingsearch.swift */; };
 		B0BCD5BA1B2E01B200F9782A /* evaluate1search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BCD5B91B2E01B200F9782A /* evaluate1search.swift */; };
 		B0BCD5BC1B2E024100F9782A /* evaluate2search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BCD5BB1B2E024100F9782A /* evaluate2search.swift */; };
+		B0E6E6421BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E6E63B1BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.m */; };
+		B0E6E6431BA5524900B402D0 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E6E63D1BA5524900B402D0 /* TPKeyboardAvoidingScrollView.m */; };
+		B0E6E6441BA5524900B402D0 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E6E63F1BA5524900B402D0 /* TPKeyboardAvoidingTableView.m */; };
+		B0E6E6451BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E6E6411BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		B0EA68421BC3963300373AC5 /* cource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA68411BC3963300373AC5 /* cource.swift */; settings = {ASSET_TAGS = (); }; };
 		B0FB00B31AD50657002668EF /* house.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FB00B21AD50657002668EF /* house.jpg */; };
 		B0FB00B61AD506EC002668EF /* housebackgroud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FB00B51AD506EC002668EF /* housebackgroud.jpg */; };
 		B0FB00BE1AD50BC3002668EF /* house.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FB00BD1AD50BC3002668EF /* house.jpg */; };
@@ -106,16 +110,6 @@
 		B0FB010B1AE76F0F002668EF /* thirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB010A1AE76F0F002668EF /* thirdView.swift */; };
 		B0FB010D1AE79F7B002668EF /* paidan.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B0FB010C1AE79F7B002668EF /* paidan.JPG */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B05720811AD3A197003738B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B05720631AD3A197003738B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B057206A1AD3A197003738B8;
-			remoteInfo = App;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F24F0B024F15CAAD88DC01C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +138,6 @@
 		B05720701AD3A197003738B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B05720721AD3A197003738B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B057207A1AD3A197003738B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B05720801AD3A197003738B8 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05720851AD3A197003738B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B05720861AD3A197003738B8 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		B05A5B5B1B28315800ACD7EF /* writingmessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = writingmessage.swift; sourceTree = "<group>"; };
@@ -209,6 +202,15 @@
 		B0BCD5B71B2E008B00F9782A /* writingsearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = writingsearch.swift; sourceTree = "<group>"; };
 		B0BCD5B91B2E01B200F9782A /* evaluate1search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = evaluate1search.swift; sourceTree = "<group>"; };
 		B0BCD5BB1B2E024100F9782A /* evaluate2search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = evaluate2search.swift; sourceTree = "<group>"; };
+		B0E6E63A1BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		B0E6E63B1BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		B0E6E63C1BA5524900B402D0 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		B0E6E63D1BA5524900B402D0 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		B0E6E63E1BA5524900B402D0 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		B0E6E63F1BA5524900B402D0 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		B0E6E6401BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		B0E6E6411BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		B0EA68411BC3963300373AC5 /* cource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cource.swift; path = ../cource.swift; sourceTree = "<group>"; };
 		B0FB00B21AD50657002668EF /* house.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house.jpg; sourceTree = "<group>"; };
 		B0FB00B51AD506EC002668EF /* housebackgroud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = housebackgroud.jpg; sourceTree = "<group>"; };
 		B0FB00BD1AD50BC3002668EF /* house.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = house.jpg; path = ../../../Downloads/house.jpg; sourceTree = "<group>"; };
@@ -231,13 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				301215E7977ED56FFE749543 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B057207D1AD3A197003738B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				B057206B1AD3A197003738B8 /* App.app */,
-				B05720801AD3A197003738B8 /* AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -309,6 +303,7 @@
 		B057206D1AD3A197003738B8 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B0E6E6391BA5524900B402D0 /* TPKeyboardAvoiding副本 */,
 				B05A5B6C1B2C149B00ACD7EF /* evaluate2 */,
 				B05A5B671B2C0B2700ACD7EF /* evaluate1 */,
 				B05A5B5A1B282FCF00ACD7EF /* writing */,
@@ -439,9 +434,25 @@
 			name = SystemGm;
 			sourceTree = "<group>";
 		};
+		B0E6E6391BA5524900B402D0 /* TPKeyboardAvoiding副本 */ = {
+			isa = PBXGroup;
+			children = (
+				B0E6E63A1BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.h */,
+				B0E6E63B1BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.m */,
+				B0E6E63C1BA5524900B402D0 /* TPKeyboardAvoidingScrollView.h */,
+				B0E6E63D1BA5524900B402D0 /* TPKeyboardAvoidingScrollView.m */,
+				B0E6E63E1BA5524900B402D0 /* TPKeyboardAvoidingTableView.h */,
+				B0E6E63F1BA5524900B402D0 /* TPKeyboardAvoidingTableView.m */,
+				B0E6E6401BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				B0E6E6411BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = "TPKeyboardAvoiding副本";
+			sourceTree = "<group>";
+		};
 		B0FB00B41AD50662002668EF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B0EA68411BC3963300373AC5 /* cource.swift */,
 				B0BCD5AD1B2DB50E00F9782A /* 1.png */,
 				B0793C741B1302FA005D66A8 /* about-2.png */,
 				B0793C721B130043005D66A8 /* about.png */,
@@ -513,39 +524,19 @@
 			productReference = B057206B1AD3A197003738B8 /* App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B057207F1AD3A197003738B8 /* AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B057208D1AD3A197003738B8 /* Build configuration list for PBXNativeTarget "AppTests" */;
-			buildPhases = (
-				B057207C1AD3A197003738B8 /* Sources */,
-				B057207D1AD3A197003738B8 /* Frameworks */,
-				B057207E1AD3A197003738B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B05720821AD3A197003738B8 /* PBXTargetDependency */,
-			);
-			name = AppTests;
-			productName = AppTests;
-			productReference = B05720801AD3A197003738B8 /* AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B05720631AD3A197003738B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "赵希帆";
 				TargetAttributes = {
 					B057206A1AD3A197003738B8 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					B057207F1AD3A197003738B8 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = B057206A1AD3A197003738B8;
 					};
 				};
 			};
@@ -563,7 +554,6 @@
 			projectRoot = "";
 			targets = (
 				B057206A1AD3A197003738B8 /* App */,
-				B057207F1AD3A197003738B8 /* AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -586,13 +576,6 @@
 				B057207B1AD3A197003738B8 /* LaunchScreen.xib in Resources */,
 				B0793C731B130043005D66A8 /* about.png in Resources */,
 				B0FB010D1AE79F7B002668EF /* paidan.JPG in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B057207E1AD3A197003738B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,9 +650,12 @@
 				B0793C9B1B1898DC005D66A8 /* outtimeView.swift in Sources */,
 				B0FB00FC1ADE741E002668EF /* firstView.swift in Sources */,
 				B0BCD5BA1B2E01B200F9782A /* evaluate1search.swift in Sources */,
+				B0E6E6441BA5524900B402D0 /* TPKeyboardAvoidingTableView.m in Sources */,
 				B05A5B721B2D578C00ACD7EF /* evaluate11message.swift in Sources */,
 				B0793C851B1741FF005D66A8 /* contactphoneView.swift in Sources */,
+				B0E6E6451BA5524900B402D0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				B0793CA11B1993C3005D66A8 /* firstevaluatecell.swift in Sources */,
+				B0E6E6421BA5524900B402D0 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				B05A5B641B28350D00ACD7EF /* writingtable2cell.swift in Sources */,
 				B0793CAD1B1AE879005D66A8 /* reportdateView.swift in Sources */,
 				B05A5B621B2834FC00ACD7EF /* writingtablecell.swift in Sources */,
@@ -697,6 +683,7 @@
 				B0FB01071AE60715002668EF /* whole.swift in Sources */,
 				B0BCD5B61B2DFFE700F9782A /* moneysearch.swift in Sources */,
 				B0793C871B1744B8005D66A8 /* firstunitView.swift in Sources */,
+				B0EA68421BC3963300373AC5 /* cource.swift in Sources */,
 				B05A5B7A1B2D5E7500ACD7EF /* evaluate22cell.swift in Sources */,
 				B05A5B661B2C0B1700ACD7EF /* evaluate1message.swift in Sources */,
 				B05A5B6B1B2C148100ACD7EF /* evaluate2table.swift in Sources */,
@@ -716,29 +703,14 @@
 				B01184651B27386E0095E507 /* moneytable2.swift in Sources */,
 				B01682331B26104100C718B9 /* appraisertable.swift in Sources */,
 				B0793CA31B19A9EF005D66A8 /* firstsuggestionView.swift in Sources */,
+				B0E6E6431BA5524900B402D0 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B0BCD5B21B2DFCC800F9782A /* salesmansearch.swift in Sources */,
 				B05A5B5C1B28315800ACD7EF /* writingmessage.swift in Sources */,
 				B01682351B26115B00C718B9 /* appraisertablecell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B057207C1AD3A197003738B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B05720871AD3A197003738B8 /* AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B05720821AD3A197003738B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B057206A1AD3A197003738B8 /* App */;
-			targetProxy = B05720811AD3A197003738B8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B01682211B236BDD00C718B9 /* Main.storyboard */ = {
@@ -868,40 +840,6 @@
 			};
 			name = Release;
 		};
-		B057208E1AD3A197003738B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
-			};
-			name = Debug;
-		};
-		B057208F1AD3A197003738B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -919,15 +857,6 @@
 			buildConfigurations = (
 				B057208B1AD3A197003738B8 /* Debug */,
 				B057208C1AD3A197003738B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B057208D1AD3A197003738B8 /* Build configuration list for PBXNativeTarget "AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B057208E1AD3A197003738B8 /* Debug */,
-				B057208F1AD3A197003738B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

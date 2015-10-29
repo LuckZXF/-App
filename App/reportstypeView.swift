@@ -29,7 +29,7 @@ class reportstypeView : UITableViewController {
         return reportstype.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item9", forIndexPath: indexPath) as reportstypecell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item9", forIndexPath: indexPath) as! reportstypecell
         //cell. .text = appraiser[indexPath.row]
         cell.firstlabel.text = reportstype[indexPath.row]
         return cell

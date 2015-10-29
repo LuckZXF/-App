@@ -29,7 +29,7 @@ class salesmanView : UITableViewController {
         return salesman.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item5", forIndexPath: indexPath) as salesmancell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item5", forIndexPath: indexPath) as! salesmancell
         cell.salesmanlabel.text = salesman[indexPath.row]
         return cell
     }

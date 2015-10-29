@@ -24,7 +24,7 @@ class thirdView : UIViewController {
         liebiao.removeAll(keepCapacity: true)
         count1?.removeAllObjects()
         pinggu.removeAll(keepCapacity: true)
-        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as ViewController
+        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as! ViewController
         self.presentViewController(view, animated: true, completion: nil)
     }
     

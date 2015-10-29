@@ -24,7 +24,7 @@ class moneytable2 : UITableViewController , UIAlertViewDelegate {
             alert.message = "您当前未修改过数据不用保存"
             alert.addButtonWithTitle("ok")
             alert.show()
-            println("ok")
+            print("ok")
             
         }
         else{
@@ -46,11 +46,11 @@ class moneytable2 : UITableViewController , UIAlertViewDelegate {
             params.updateValue(deliverwhoid!, forKey: "id")
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/money", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["result"] as NSString
+                print("success")
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["result"] as! String
                 if(panduan == "yes"){
-                    println("OK")
+                    print("OK")
                     let alert = UIAlertView()
                     alert.title = "恭喜"
                     alert.message = "评估单已提交保存"
@@ -62,8 +62,8 @@ class moneytable2 : UITableViewController , UIAlertViewDelegate {
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
         }
     }
@@ -87,7 +87,7 @@ class moneytable2 : UITableViewController , UIAlertViewDelegate {
         return money1.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item16", forIndexPath: indexPath) as moneytable2cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item16", forIndexPath: indexPath) as! moneytable2cell
         cell.firstlabel.text = money1[indexPath.row]
         // cell.secondlabel.text = count1?.objectAtIndex(index)["id"] as NSString/
         cell.secondlabel.text = money2[indexPath.row]
@@ -105,37 +105,37 @@ class moneytable2 : UITableViewController , UIAlertViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 10)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("totalView") as totalView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("totalView") as! totalView
             view.navigationItem.title = "评估总价"
             self.navigationController?.pushViewController(view, animated: true)
             
         }
         if(indexPath.row == 15)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportnumView") as reportnumView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportnumView") as! reportnumView
             view.navigationItem.title = "报告编号"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 16)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportdateView") as reportdateView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportdateView") as! reportdateView
             view.navigationItem.title = "报告日期"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 17)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportstypeView") as reportstypeView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportstypeView") as! reportstypeView
             view.navigationItem.title = "报告类型"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 18)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("payView") as payView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("payView") as! payView
             view.navigationItem.title = "收费"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 19){
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("thirdremarkView") as thirdremarkView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("thirdremarkView") as! thirdremarkView
             view.navigationItem.title = "备注（财务）"
             self.navigationController?.pushViewController(view, animated: true)
         }

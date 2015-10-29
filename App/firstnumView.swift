@@ -28,11 +28,11 @@ class firstnumView : UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[2] = firstnumtext.text
+        liebiao1[2] = firstnumtext.text!
         }
         else if(shenfen == 3)
         {
-            salesman2[0] = firstnumtext.text
+            salesman2[0] = firstnumtext.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

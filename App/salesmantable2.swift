@@ -24,7 +24,7 @@ class salesmantable2 : UITableViewController,UIAlertViewDelegate {
             alert.message = "您当前未修改过数据不用保存"
             alert.addButtonWithTitle("ok")
             alert.show()
-            println("ok")
+            print("ok")
             
         }
         else{
@@ -49,8 +49,8 @@ class salesmantable2 : UITableViewController,UIAlertViewDelegate {
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/salesman", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 //println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["result"] as NSString
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["result"] as! String
                 if(panduan == "yes"){
                     // println("OK")
                     let alert = UIAlertView()
@@ -64,8 +64,8 @@ class salesmantable2 : UITableViewController,UIAlertViewDelegate {
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
         }
     }
@@ -89,7 +89,7 @@ class salesmantable2 : UITableViewController,UIAlertViewDelegate {
         return salesman1.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item12", forIndexPath: indexPath) as salesmantable2cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item12", forIndexPath: indexPath) as! salesmantable2cell
         cell.firstlabel.text = salesman1[indexPath.row]
         // cell.secondlabel.text = count1?.objectAtIndex(index)["id"] as NSString/
         cell.secondlabel.text = salesman2[indexPath.row]
@@ -107,55 +107,55 @@ class salesmantable2 : UITableViewController,UIAlertViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 2)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactView") as contactView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactView") as! contactView
             view.navigationItem.title = "联系人"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 3)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactphoneView") as contactphoneView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactphoneView") as! contactphoneView
             view.navigationItem.title = "联系电话"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 4)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstunitView") as firstunitView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstunitView") as! firstunitView
             view.navigationItem.title = "一级派单单位"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 5)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("secondunitView") as secondunitView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("secondunitView") as! secondunitView
             view.navigationItem.title = "二级派单单位"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 6)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("thirdunitView") as thirdunitView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("thirdunitView") as! thirdunitView
             view.navigationItem.title = "三级派单单位"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 8)
         {
-            let view  = self.storyboard?.instantiateViewControllerWithIdentifier("belongView") as belongView
+            let view  = self.storyboard?.instantiateViewControllerWithIdentifier("belongView") as! belongView
             view.navigationItem.title = "属地"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 9)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("localView") as localView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("localView") as! localView
             view.navigationItem.title = "房产坐落地"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 10)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstremarkView") as firstremarkView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstremarkView") as! firstremarkView
             view.navigationItem.title = "备注（评估员）"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 11)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("areanameView") as areanameView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("areanameView") as! areanameView
             view.navigationItem.title = "小区名称"
             self.navigationController?.pushViewController(view, animated: true)
         }

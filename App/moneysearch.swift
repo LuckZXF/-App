@@ -23,15 +23,15 @@ class moneysearch : UIViewController,UIAlertViewDelegate{
         var fxz : AFJSONResponseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = zxf
         manager.responseSerializer = fxz
-        var number : String = search.text
+        var number : String = search.text!
         var name : String = test2!
         var params : Dictionary<String,String> = ["firstnum" : number]
-        println(params)
+        print(params)
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search4", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            var back1 = responseObject as NSDictionary!
-            var panduan : String = back1["result"] as NSString
+            var back1 = responseObject as! NSDictionary!
+            var panduan : String = back1["result"] as! String
             
             if(panduan == "no")
             {
@@ -43,50 +43,50 @@ class moneysearch : UIViewController,UIAlertViewDelegate{
             }
             else{
                 var params : Dictionary<String,String> = ["firstnum" : number]
-                println(params)
+                print(params)
                 manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search44", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                     responseObject: AnyObject!) in
-                    var back = responseObject as NSMutableArray!
+                    var back = responseObject as! NSMutableArray!
                     
-                    var id : String = back.objectAtIndex(0)["id"] as NSString
+                    var id : String = back.objectAtIndex(0)["id"] as! String
                     
                     //liebiao2 = back.objectAtIndex(0) as NSDictionary
                    
                                         //liebiao2 = back.objectAtIndex(0) as NSDictionary
-                    let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("moneytable2") as moneytable2
+                    let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("moneytable2") as! moneytable2
                     
                     view1.navigationItem.title = "评估表：\(id)"
                     //liebiao2 = back.objectAtIndex(0) as NSDictionary
-                    money2[0] = back.objectAtIndex(0)["firstnum"] as NSString
-                    money2[1] = back.objectAtIndex(0)["yearmonth"] as NSString
-                    money2[2] = back.objectAtIndex(0)["contact"] as NSString
-                    money2[3] = back.objectAtIndex(0)["contactphone"] as NSString
-                    money2[4] = back.objectAtIndex(0)["firstunit"] as NSString
-                    money2[5] = back.objectAtIndex(0)["secondunit"] as NSString
-                    money2[6] = back.objectAtIndex(0)["thirdunit"] as NSString
-                    money2[7] = back.objectAtIndex(0)["appraiser"] as NSString
-                    money2[8] = back.objectAtIndex(0)["local"] as NSString
-                    money2[9] = back.objectAtIndex(0)["realdate"] as NSString
-                    money2[10] = back.objectAtIndex(0)["total"] as NSString
-                    money2[11] = back.objectAtIndex(0)["firstevaluate"] as NSString
-                    money2[12] = back.objectAtIndex(0)["firstsuggestion"] as NSString
-                    money2[13] = back.objectAtIndex(0)["secondevaluate"] as NSString
-                    money2[14] = back.objectAtIndex(0)["secondsuggestion"] as NSString
-                    money2[15] = back.objectAtIndex(0)["reportnum"] as NSString
-                    money2[16] = back.objectAtIndex(0)["reportdate"] as NSString
-                    money2[17] = back.objectAtIndex(0)["reportstyle"] as NSString
-                    money2[18] = back.objectAtIndex(0)["pay"] as NSString
-                    money2[19] = back.objectAtIndex(0)["thirdremark"] as NSString
-                    deliverwho = back.objectAtIndex(0)["deliver"] as NSString
-                    deliverwhoid = back.objectAtIndex(0)["id"] as NSString
+                    money2[0] = back.objectAtIndex(0)["firstnum"] as! String
+                    money2[1] = back.objectAtIndex(0)["yearmonth"] as! String
+                    money2[2] = back.objectAtIndex(0)["contact"] as! String
+                    money2[3] = back.objectAtIndex(0)["contactphone"] as! String
+                    money2[4] = back.objectAtIndex(0)["firstunit"] as! String
+                    money2[5] = back.objectAtIndex(0)["secondunit"] as! String
+                    money2[6] = back.objectAtIndex(0)["thirdunit"] as! String
+                    money2[7] = back.objectAtIndex(0)["appraiser"] as! String
+                    money2[8] = back.objectAtIndex(0)["local"] as! String
+                    money2[9] = back.objectAtIndex(0)["realdate"] as! String
+                    money2[10] = back.objectAtIndex(0)["total"] as! String
+                    money2[11] = back.objectAtIndex(0)["firstevaluate"] as! String
+                    money2[12] = back.objectAtIndex(0)["firstsuggestion"] as! String
+                    money2[13] = back.objectAtIndex(0)["secondevaluate"] as! String
+                    money2[14] = back.objectAtIndex(0)["secondsuggestion"] as! String
+                    money2[15] = back.objectAtIndex(0)["reportnum"] as! String
+                    money2[16] = back.objectAtIndex(0)["reportdate"] as! String
+                    money2[17] = back.objectAtIndex(0)["reportstyle"] as! String
+                    money2[18] = back.objectAtIndex(0)["pay"] as! String
+                    money2[19] = back.objectAtIndex(0)["thirdremark"] as! String
+                    deliverwho = back.objectAtIndex(0)["deliver"] as! String
+                    deliverwhoid = back.objectAtIndex(0)["id"] as! String
                     self.navigationController?.pushViewController(view1, animated: true)
                     
                     },
                     failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
                         //Handle Error
-                        println(error)
-                        println(operation.responseString)
+                        print(error)
+                        print(operation.responseString)
                 })
                 
             }
@@ -96,8 +96,8 @@ class moneysearch : UIViewController,UIAlertViewDelegate{
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         
     }

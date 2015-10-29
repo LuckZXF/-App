@@ -25,11 +25,11 @@ class thirdunitView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[8] = thirdunit.text
+        liebiao1[8] = thirdunit.text!
         }
         else if (shenfen == 3)
         {
-            salesman2[6] = thirdunit.text
+            salesman2[6] = thirdunit.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

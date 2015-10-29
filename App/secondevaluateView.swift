@@ -29,7 +29,7 @@ class secondevaluateView : UITableViewController {
         return secondvaluate.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item8", forIndexPath: indexPath) as secondevaluatecell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item8", forIndexPath: indexPath) as! secondevaluatecell
         //cell. .text = appraiser[indexPath.row]
         cell.firstlabel.text = secondvaluate[indexPath.row]
         return cell

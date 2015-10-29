@@ -24,7 +24,7 @@ class writingtable2 : UITableViewController , UIAlertViewDelegate {
             alert.message = "您当前未修改过数据不用保存"
             alert.addButtonWithTitle("ok")
             alert.show()
-            println("ok")
+            print("ok")
             
         }
         else{
@@ -42,11 +42,11 @@ class writingtable2 : UITableViewController , UIAlertViewDelegate {
             params.updateValue(deliverwhoid!, forKey: "id")
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/writing", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["result"] as NSString
+                print("success")
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["result"] as! String
                 if(panduan == "yes"){
-                    println("OK")
+                    print("OK")
                     let alert = UIAlertView()
                     alert.title = "恭喜"
                     alert.message = "评估单已提交保存"
@@ -58,8 +58,8 @@ class writingtable2 : UITableViewController , UIAlertViewDelegate {
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
         }
     }
@@ -83,7 +83,7 @@ class writingtable2 : UITableViewController , UIAlertViewDelegate {
         return writing1.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item18", forIndexPath: indexPath) as writingtable2cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item18", forIndexPath: indexPath) as! writingtable2cell
         cell.firstlabel.text = money1[indexPath.row]
         // cell.secondlabel.text = count1?.objectAtIndex(index)["id"] as NSString/
         cell.secondlabel.text = money2[indexPath.row]
@@ -101,32 +101,32 @@ class writingtable2 : UITableViewController , UIAlertViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 7)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("totalView") as totalView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("totalView") as! totalView
             view.navigationItem.title = "评估总价"
             self.navigationController?.pushViewController(view, animated: true)
             
         }
         if(indexPath.row == 12)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportnumView") as reportnumView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportnumView") as! reportnumView
             view.navigationItem.title = "报告编号"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 13)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportdateView") as reportdateView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportdateView") as! reportdateView
             view.navigationItem.title = "报告日期"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 14)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportstypeView") as reportstypeView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("reportstypeView") as! reportstypeView
             view.navigationItem.title = "报告类型"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 15)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("secondremark") as secondremarkView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("secondremark") as! secondremarkView
             view.navigationItem.title = "备注（文员）"
             self.navigationController?.pushViewController(view, animated: true)
         }

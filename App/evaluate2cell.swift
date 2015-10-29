@@ -1,17 +1,17 @@
 //
-//  DeliverNameCell.swift
+//  evaluate2cell.swift
 //  App
 //
-//  Created by 赵希帆 on 15/5/21.
+//  Created by 赵希帆 on 15/6/13.
 //  Copyright (c) 2015年 赵希帆. All rights reserved.
 //
 
 import UIKit
 
-class DeliverNameCell : UITableViewCell {
+class evaluate2cell : UITableViewCell {
     
-    @IBOutlet weak var Delivername: UILabel!
-    //var delivername : String!
+    @IBOutlet weak var firstlabel: UILabel!
+    @IBOutlet weak var secondlabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,7 +19,6 @@ class DeliverNameCell : UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        
     }
+    
 }

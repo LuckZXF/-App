@@ -49,18 +49,18 @@ class systemView : UITableViewController ,UIAlertViewDelegate {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/add2", parameters: nil, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            let responseDict = responseObject as NSDictionary!
-            var panduan : String = responseDict["success"] as NSString
+            let responseDict = responseObject as! NSDictionary!
+            var panduan : String = responseDict["success"] as! String
             if(panduan == "yes"){
-                println("OK")
+                print("OK")
                 add = false
             }
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         
         //self.arr.insert(id, atIndex: 0)
@@ -102,7 +102,7 @@ class systemView : UITableViewController ,UIAlertViewDelegate {
     
     //  }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item10") as systemcell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item10") as! systemcell
         cell.firstlabel.text = gmusername[indexPath.row]
         cell.secondlabel.text = gmuserpower[indexPath.row]
         if(cell.firstlabel.text == "姓名")
@@ -117,7 +117,7 @@ class systemView : UITableViewController ,UIAlertViewDelegate {
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let view = self.storyboard?.instantiateViewControllerWithIdentifier("adduserView") as adduserView
+        let view = self.storyboard?.instantiateViewControllerWithIdentifier("adduserView") as! adduserView
         view.navigationItem.title = "用户资料"
         view.index = indexPath.row
         self.navigationController?.pushViewController(view, animated: true)
@@ -146,17 +146,17 @@ class systemView : UITableViewController ,UIAlertViewDelegate {
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/delete2", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 //println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["success"] as NSString
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["success"] as! String
                 if(panduan == "yes"){
-                    println("OK")
+                    print("OK")
                 }
                 },
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
             gmusername.removeAtIndex(indexPath.row)
             gmuserpower.removeAtIndex(indexPath.row)
@@ -164,7 +164,7 @@ class systemView : UITableViewController ,UIAlertViewDelegate {
             gmuserid.removeAtIndex(indexPath.row)
             gmuserphone.removeAtIndex(indexPath.row)
             gmuseremail.removeAtIndex(indexPath.row)
-            print("\(indexPath.row)")
+            print("\(indexPath.row)", terminator: "")
             if(indexPath.row == 0)
             {
                 add = true

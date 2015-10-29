@@ -67,7 +67,7 @@ class firstView :  UIViewController , UIAlertViewDelegate {
         appraiser.removeAll(keepCapacity: true)
         firstevaluate.removeAll(keepCapacity: true)
         secondvaluate.removeAll(keepCapacity: true)
-        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as ViewController
+        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as! ViewController
         self.presentViewController(view, animated: true, completion: nil)
     
 
@@ -98,9 +98,9 @@ class firstView :  UIViewController , UIAlertViewDelegate {
         var fxz : AFJSONResponseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = zxf
         manager.responseSerializer = fxz
-        var userphone : String = phone.text
-        var useremail : String = email.text
-        var userpassword : String = password.text
+        var userphone : String = phone.text!
+        var useremail : String = email.text!
+        var userpassword : String = password.text!
         var username : String = name.text!
         var userpower : String = power.text!
         var userid : String = test0!
@@ -109,22 +109,22 @@ class firstView :  UIViewController , UIAlertViewDelegate {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/update", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            let responseDict = responseObject as NSDictionary!
-            var panduan : String = responseDict["success"] as NSString
+            let responseDict = responseObject as! NSDictionary!
+            var panduan : String = responseDict["success"] as! String
             if(panduan == "yes"){
                 test = self.password.text
                 test4 = self.phone.text
                 test5 = self.email.text
                 //print("sss")
-                var view = self.storyboard?.instantiateViewControllerWithIdentifier("changeMessage") as changeMessage
+                var view = self.storyboard?.instantiateViewControllerWithIdentifier("changeMessage") as! changeMessage
                 self.presentViewController(view, animated: true, completion: nil)
             }
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         }
             else{

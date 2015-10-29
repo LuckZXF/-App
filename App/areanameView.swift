@@ -24,15 +24,15 @@ class areanameView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[13] = areaname.text
+        liebiao1[13] = areaname.text!
         }
         else if(shenfen == 3)
         {
-            salesman2[11] = areaname.text
+            salesman2[11] = areaname.text!
         }
         else if(shenfen == 4)
         {
-            appraiser2[11] = areaname.text
+            appraiser2[11] = areaname.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

@@ -23,15 +23,15 @@ class evaluate1search : UIViewController,UIAlertViewDelegate{
         var fxz : AFJSONResponseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = zxf
         manager.responseSerializer = fxz
-        var number : String = search.text
+        var number : String = search.text!
         var name : String = test2!
         var params : Dictionary<String,String> = ["firstnum" : number,"firstevaluate" : name]
-        println(params)
+        print(params)
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search6", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            var back1 = responseObject as NSDictionary!
-            var panduan : String = back1["result"] as NSString
+            var back1 = responseObject as! NSDictionary!
+            var panduan : String = back1["result"] as! String
             
             if(panduan == "no")
             {
@@ -43,45 +43,45 @@ class evaluate1search : UIViewController,UIAlertViewDelegate{
             }
             else{
                 var params : Dictionary<String,String> = ["firstnum" : number,"firstevaluate" : name]
-                println(params)
+                print(params)
                 manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search66", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                     responseObject: AnyObject!) in
-                    var back = responseObject as NSMutableArray!
+                    var back = responseObject as! NSMutableArray!
                     
-                    var id : String = back.objectAtIndex(0)["id"] as NSString
+                    var id : String = back.objectAtIndex(0)["id"] as! String
                     
                     //liebiao2 = back.objectAtIndex(0) as NSDictionary
                     
-                     let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1table2") as evaluate2table
+                     let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1table2") as! evaluate2table
                     view1.navigationItem.title = "评估表：\(id)"                    
                     
                     //liebiao2 = back.objectAtIndex(0) as NSDictionary
-                    evaluate2[0] = back.objectAtIndex(0)["firstnum"] as NSString
-                    evaluate2[1] = back.objectAtIndex(0)["yearmonth"] as NSString
-                    evaluate2[2] = back.objectAtIndex(0)["firstunit"] as NSString
-                    evaluate2[3] = back.objectAtIndex(0)["secondunit"] as NSString
-                    evaluate2[4] = back.objectAtIndex(0)["appraiser"] as NSString
-                    evaluate2[5] = back.objectAtIndex(0)["belong"] as NSString
-                    evaluate2[6] = back.objectAtIndex(0)["local"] as NSString
-                    evaluate2[7] = back.objectAtIndex(0)["areaname"] as NSString
-                    evaluate2[8] = back.objectAtIndex(0)["realdate"] as NSString
-                    evaluate2[9] = back.objectAtIndex(0)["total"] as NSString
-                    evaluate2[10] = back.objectAtIndex(0)["firstsuggestion"] as NSString
-                    evaluate2[11] = back.objectAtIndex(0)["reportnum"] as NSString
-                    evaluate2[12] = back.objectAtIndex(0)["reportdate"] as NSString
-                    evaluate2[13] = back.objectAtIndex(0)["reportstyle"] as NSString
+                    evaluate2[0] = back.objectAtIndex(0)["firstnum"] as! String
+                    evaluate2[1] = back.objectAtIndex(0)["yearmonth"] as! String
+                    evaluate2[2] = back.objectAtIndex(0)["firstunit"] as! String
+                    evaluate2[3] = back.objectAtIndex(0)["secondunit"] as! String
+                    evaluate2[4] = back.objectAtIndex(0)["appraiser"] as! String
+                    evaluate2[5] = back.objectAtIndex(0)["belong"] as! String
+                    evaluate2[6] = back.objectAtIndex(0)["local"] as! String
+                    evaluate2[7] = back.objectAtIndex(0)["areaname"] as! String
+                    evaluate2[8] = back.objectAtIndex(0)["realdate"] as! String
+                    evaluate2[9] = back.objectAtIndex(0)["total"] as! String
+                    evaluate2[10] = back.objectAtIndex(0)["firstsuggestion"] as! String
+                    evaluate2[11] = back.objectAtIndex(0)["reportnum"] as! String
+                    evaluate2[12] = back.objectAtIndex(0)["reportdate"] as! String
+                    evaluate2[13] = back.objectAtIndex(0)["reportstyle"] as! String
                     
                     
-                    deliverwho = back.objectAtIndex(0)["deliver"] as NSString
-                    deliverwhoid = back.objectAtIndex(0)["id"] as NSString
+                    deliverwho = back.objectAtIndex(0)["deliver"] as! String
+                    deliverwhoid = back.objectAtIndex(0)["id"] as! String
                     self.navigationController?.pushViewController(view1, animated: true)
                     
                     },
                     failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
                         //Handle Error
-                        println(error)
-                        println(operation.responseString)
+                        print(error)
+                        print(operation.responseString)
                 })
                 
             }
@@ -91,8 +91,8 @@ class evaluate1search : UIViewController,UIAlertViewDelegate{
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         
     }

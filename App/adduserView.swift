@@ -38,12 +38,12 @@ class adduserView : UIViewController {
         power.resignFirstResponder()
     }
     @IBAction func submit(sender: AnyObject) {
-        var userid : String = id.text
-        var username : String = name.text
-        var userphone : String = phone.text
-        var userpassword : String  = password.text
-        var useremail : String = email.text
-        var userpower : String = power.text
+        var userid : String! = id.text!
+        var username : String! = name.text!
+        var userphone : String! = phone.text!
+        var userpassword : String!  = password.text!
+        var useremail : String! = email.text!
+        var userpower : String! = power.text!
         if(userid != "" && username != "" && userpassword != "" && userphone != "" && useremail != "" && userpower != "")
         {
         let manager = AFHTTPRequestOperationManager()
@@ -58,10 +58,10 @@ class adduserView : UIViewController {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/adduser", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            let responseDict = responseObject as NSDictionary!
-            var panduan : String = responseDict["success"] as NSString
+            let responseDict = responseObject as! NSDictionary!
+            var panduan : String = responseDict["success"] as! String
             if(panduan == "yes"){
-                println("OK")
+                print("OK")
                 add = true
                 gmusername[0] = username
                 gmuserid[0] = userid
@@ -81,8 +81,8 @@ class adduserView : UIViewController {
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         }
         else{

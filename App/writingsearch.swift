@@ -23,15 +23,15 @@ class writingsearch : UIViewController,UIAlertViewDelegate{
         var fxz : AFJSONResponseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = zxf
         manager.responseSerializer = fxz
-        var number : String = search.text
+        var number : String = search.text!
         var name : String = test2!
         var params : Dictionary<String,String> = ["firstnum" : number]
-        println(params)
+        print(params)
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search4", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             //println("success")
-            var back1 = responseObject as NSDictionary!
-            var panduan : String = back1["result"] as NSString
+            var back1 = responseObject as! NSDictionary!
+            var panduan : String = back1["result"] as! String
             
             if(panduan == "no")
             {
@@ -43,37 +43,37 @@ class writingsearch : UIViewController,UIAlertViewDelegate{
             }
             else{
                 var params : Dictionary<String,String> = ["firstnum" : number]
-                println(params)
+                print(params)
                 manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/search44", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                     responseObject: AnyObject!) in
-                    var back = responseObject as NSMutableArray!
+                    var back = responseObject as! NSMutableArray!
                     
-                    var id : String = back.objectAtIndex(0)["id"] as NSString
-                    
-                    //liebiao2 = back.objectAtIndex(0) as NSDictionary
+                    var id : String = back.objectAtIndex(0)["id"] as! String
                     
                     //liebiao2 = back.objectAtIndex(0) as NSDictionary
-                    let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("writingtable2") as writingtable2
+                    
+                    //liebiao2 = back.objectAtIndex(0) as NSDictionary
+                    let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("writingtable2") as! writingtable2
                     view1.navigationItem.title = "评估表：\(id)"                    //liebiao2 = back.objectAtIndex(0) as NSDictionary
-                    writing2[0] = back.objectAtIndex(0)["firstnum"] as NSString
-                    writing2[1] = back.objectAtIndex(0)["yearmonth"] as NSString
-                    writing2[2] = back.objectAtIndex(0)["contact"] as NSString
-                    writing2[3] = back.objectAtIndex(0)["contactphone"] as NSString
-                    writing2[4] = back.objectAtIndex(0)["appraiser"] as NSString
-                    writing2[5] = back.objectAtIndex(0)["belong"] as NSString
-                    writing2[6] = back.objectAtIndex(0)["local"] as NSString
-                    writing2[7] = back.objectAtIndex(0)["total"] as NSString
-                    writing2[8] = back.objectAtIndex(0)["firstevaluate"] as NSString
-                    writing2[9] = back.objectAtIndex(0)["firstsuggestion"] as NSString
-                    writing2[10] = back.objectAtIndex(0)["secondevaluate"] as NSString
-                    writing2[11] = back.objectAtIndex(0)["secondsuggestion"] as NSString
-                    writing2[12] = back.objectAtIndex(0)["reportnum"] as NSString
-                    writing2[13] = back.objectAtIndex(0)["reportdate"] as NSString
-                    writing2[14] = back.objectAtIndex(0)["reportstyle"] as NSString
-                    writing2[15] = back.objectAtIndex(0)["secondremark"] as NSString
+                    writing2[0] = back.objectAtIndex(0)["firstnum"] as! String
+                    writing2[1] = back.objectAtIndex(0)["yearmonth"] as! String
+                    writing2[2] = back.objectAtIndex(0)["contact"] as! String
+                    writing2[3] = back.objectAtIndex(0)["contactphone"] as! String
+                    writing2[4] = back.objectAtIndex(0)["appraiser"] as! String
+                    writing2[5] = back.objectAtIndex(0)["belong"] as! String
+                    writing2[6] = back.objectAtIndex(0)["local"] as! String
+                    writing2[7] = back.objectAtIndex(0)["total"] as! String
+                    writing2[8] = back.objectAtIndex(0)["firstevaluate"] as! String
+                    writing2[9] = back.objectAtIndex(0)["firstsuggestion"] as! String
+                    writing2[10] = back.objectAtIndex(0)["secondevaluate"] as! String
+                    writing2[11] = back.objectAtIndex(0)["secondsuggestion"] as! String
+                    writing2[12] = back.objectAtIndex(0)["reportnum"] as! String
+                    writing2[13] = back.objectAtIndex(0)["reportdate"] as! String
+                    writing2[14] = back.objectAtIndex(0)["reportstyle"] as! String
+                    writing2[15] = back.objectAtIndex(0)["secondremark"] as! String
                     
-                    deliverwho = back.objectAtIndex(0)["deliver"] as NSString
-                    deliverwhoid = back.objectAtIndex(0)["id"] as NSString
+                    deliverwho = back.objectAtIndex(0)["deliver"] as! String
+                    deliverwhoid = back.objectAtIndex(0)["id"] as! String
                     self.navigationController?.pushViewController(view1, animated: true)
 
                     
@@ -84,8 +84,8 @@ class writingsearch : UIViewController,UIAlertViewDelegate{
                     failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
                         //Handle Error
-                        println(error)
-                        println(operation.responseString)
+                        print(error)
+                        print(operation.responseString)
                 })
                 
             }
@@ -95,8 +95,8 @@ class writingsearch : UIViewController,UIAlertViewDelegate{
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
         
     }

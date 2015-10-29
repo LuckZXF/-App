@@ -24,11 +24,11 @@ class payView : UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[25] = pay.text
+        liebiao1[25] = pay.text!
         }
         else if (shenfen == 5)
         {
-            money2[18] = pay.text
+            money2[18] = pay.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

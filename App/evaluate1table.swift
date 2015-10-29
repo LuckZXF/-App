@@ -23,7 +23,7 @@ class evaluate1table : UITableViewController,UIAlertViewDelegate {
         // searchbar.placeholder = "输入初评编号搜索"
         while num < count77 {
             self.items?.addObject("1")
-            println(num)
+            print(num)
             arr.insert(pinggu[num], atIndex: 0)
             num++
             
@@ -58,7 +58,7 @@ class evaluate1table : UITableViewController,UIAlertViewDelegate {
     
     //  }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item19", forIndexPath: indexPath) as evaluate1cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item19", forIndexPath: indexPath) as! evaluate1cell
         let n : Int = self.items!.count
         cell.label.text = "\(arr[indexPath.row])"
         //  count++
@@ -78,36 +78,36 @@ class evaluate1table : UITableViewController,UIAlertViewDelegate {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/find5", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             
-            var back = responseObject as NSMutableArray!
+            var back = responseObject as! NSMutableArray!
             
-            let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1table2") as evaluate2table
+            let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1table2") as! evaluate2table
             view1.navigationItem.title = "评估表：\(self.arr[indexPath.row])"
             //liebiao2 = back.objectAtIndex(0) as NSDictionary
-            evaluate2[0] = back.objectAtIndex(0)["firstnum"] as NSString
-            evaluate2[1] = back.objectAtIndex(0)["yearmonth"] as NSString
-            evaluate2[2] = back.objectAtIndex(0)["firstunit"] as NSString
-            evaluate2[3] = back.objectAtIndex(0)["secondunit"] as NSString
-            evaluate2[4] = back.objectAtIndex(0)["appraiser"] as NSString
-            evaluate2[5] = back.objectAtIndex(0)["belong"] as NSString
-            evaluate2[6] = back.objectAtIndex(0)["local"] as NSString
-            evaluate2[7] = back.objectAtIndex(0)["areaname"] as NSString
-            evaluate2[8] = back.objectAtIndex(0)["realdate"] as NSString
-            evaluate2[9] = back.objectAtIndex(0)["total"] as NSString
-            evaluate2[10] = back.objectAtIndex(0)["firstsuggestion"] as NSString
-            evaluate2[11] = back.objectAtIndex(0)["reportnum"] as NSString
-            evaluate2[12] = back.objectAtIndex(0)["reportdate"] as NSString
-            evaluate2[13] = back.objectAtIndex(0)["reportstyle"] as NSString
+            evaluate2[0] = back.objectAtIndex(0)["firstnum"] as! String
+            evaluate2[1] = back.objectAtIndex(0)["yearmonth"] as! String
+            evaluate2[2] = back.objectAtIndex(0)["firstunit"] as! String
+            evaluate2[3] = back.objectAtIndex(0)["secondunit"] as! String
+            evaluate2[4] = back.objectAtIndex(0)["appraiser"] as! String
+            evaluate2[5] = back.objectAtIndex(0)["belong"] as! String
+            evaluate2[6] = back.objectAtIndex(0)["local"] as! String
+            evaluate2[7] = back.objectAtIndex(0)["areaname"] as! String
+            evaluate2[8] = back.objectAtIndex(0)["realdate"] as! String
+            evaluate2[9] = back.objectAtIndex(0)["total"] as! String
+            evaluate2[10] = back.objectAtIndex(0)["firstsuggestion"] as! String
+            evaluate2[11] = back.objectAtIndex(0)["reportnum"] as! String
+            evaluate2[12] = back.objectAtIndex(0)["reportdate"] as! String
+            evaluate2[13] = back.objectAtIndex(0)["reportstyle"] as! String
     
             
-            deliverwho = back.objectAtIndex(0)["deliver"] as NSString
-            deliverwhoid = back.objectAtIndex(0)["id"] as NSString
+            deliverwho = back.objectAtIndex(0)["deliver"] as! String
+            deliverwhoid = back.objectAtIndex(0)["id"] as! String
             self.navigationController?.pushViewController(view1, animated: true)
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
     }
     

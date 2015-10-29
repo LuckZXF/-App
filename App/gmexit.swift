@@ -30,7 +30,7 @@ class gmexit : UIViewController{
         appraiser.removeAll(keepCapacity: true)
         firstevaluate.removeAll(keepCapacity: true)
         secondvaluate.removeAll(keepCapacity: true)
-        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as ViewController
+        var view = self.storyboard?.instantiateViewControllerWithIdentifier("ClientLogin") as! ViewController
         self.presentViewController(view, animated: true, completion: nil)
     }
 }

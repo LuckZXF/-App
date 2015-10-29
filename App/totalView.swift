@@ -25,15 +25,15 @@ class totalView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[16] = total.text
+        liebiao1[16] = total.text!
         }
         else if (shenfen == 5)
         {
-            money2[10] = total.text
+            money2[10] = total.text!
         }
         else if(shenfen == 6)
         {
-            writing2[7] = total.text
+            writing2[7] = total.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

@@ -24,15 +24,15 @@ class contactphoneView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[5] = contactphone.text
+        liebiao1[5] = contactphone.text!
         }
         else if(shenfen == 3)
         {
-            salesman2[3] = contactphone.text
+            salesman2[3] = contactphone.text!
         }
         else if(shenfen == 4)
         {
-            appraiser2[3] = contactphone.text
+            appraiser2[3] = contactphone.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

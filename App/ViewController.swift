@@ -26,7 +26,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
 
     @IBAction func loginAction(sender: AnyObject) {
         var windows = Array<UIWindow!>()
-        let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as UIView
+        let rv = UIApplication.sharedApplication().keyWindow!.subviews.first as UIView!
         let frame = CGRectMake(0, 0, 78, 78)
         let window = UIWindow(frame: frame)
         let mainView = UIView(frame: frame)
@@ -48,18 +48,18 @@ class ViewController: UIViewController , UIAlertViewDelegate {
         var fxz : AFJSONResponseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = zxf
         manager.responseSerializer = fxz
-        var userid : String = Userid.text
-        var userpwd : String = Userpwd.text
+        var userid : String = Userid.text!
+        var userpwd : String = Userpwd.text!
         
         var params : Dictionary<String,String> = ["userid" : userid, "userpassword" : userpwd]
-        print(params)
+        print(params, terminator: "")
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/exist", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             
-            let responseDict1 = responseObject as NSDictionary!
+            let responseDict1 = responseObject as! NSDictionary!
             var exist : String
             
-            exist = responseDict1["1"] as NSString
+            exist = responseDict1["1"] as! String
             if(exist == "yes")
             {
                 let manager = AFHTTPRequestOperationManager()
@@ -71,16 +71,16 @@ class ViewController: UIViewController , UIAlertViewDelegate {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/get1", parameters: nil, success: { (operation: AFHTTPRequestOperation!,
                     responseObject: AnyObject!) in
         var get : NSMutableArray
-            println("ooookkkk")
-        get = responseObject as NSMutableArray
-            println("ooookkkk")
+            print("ooookkkk")
+        get = responseObject as! NSMutableArray
+            print("ooookkkk")
         var num : Int = 0
         while(num<get.count)
         {
             var s : String
-            s = get.objectAtIndex(num)["userpower"] as NSString
+            s = get.objectAtIndex(num)["userpower"] as! NSString as String
             var p : String
-            p = get.objectAtIndex(num)["username"] as NSString
+            p = get.objectAtIndex(num)["username"] as! NSString as String
             if(s == "业务员")
             {
                 salesman.append(p)
@@ -103,19 +103,19 @@ class ViewController: UIViewController , UIAlertViewDelegate {
         failure: { (operation: AFHTTPRequestOperation!,
             error: NSError!) in
             //Handle Error
-            println(error)
-            println(operation.responseString)
+            print(error)
+            print(operation.responseString)
      })
         var params : Dictionary<String,String> = ["userid" : userid, "userpassword" : userpwd]
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hello", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
-            println("success")
-            let responseDict = responseObject as NSDictionary!
-             test = responseDict["userpassword"] as NSString
-            test3  = responseDict["userpower"] as NSString
-             test2  = responseDict["username"] as NSString
-            test4  = responseDict["userphone"] as NSString
-             test5 = responseDict["useremail"] as NSString
+            print("success")
+            let responseDict = responseObject as! NSDictionary!
+             test = responseDict["userpassword"]  as? String
+            test3  = responseDict["userpower"] as? String
+             test2  = responseDict["username"] as? String
+            test4  = responseDict["userphone"] as? String
+             test5 = responseDict["useremail"] as? String
             test0 = userid
           //  print(userpower)
             if (test == userpwd)
@@ -135,7 +135,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
                         //println("success")
-                         count1 = responseObject as NSMutableArray!
+                         count1 = responseObject as! NSMutableArray!
                         //print(responseObject)
                        
                         // let responseDict = responseObject as NSDictionary!
@@ -147,15 +147,15 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         while(num < count1?.count){
                             var s : String
                             var p : String
-                            s = count1?.objectAtIndex(num)["id"] as NSString
-                            p = count1?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count1?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count1?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             
                             if(p == "201506")
                             {
                             pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                             count11++
-                            println(count11)
+                            print(count11)
                             }
                             
                             num++
@@ -166,12 +166,12 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
 
-                var view1 = self.storyboard?.instantiateViewControllerWithIdentifier("loginsuccess") as UITabBarController
-                var view = self.storyboard?.instantiateViewControllerWithIdentifier("firstView") as firstView
+                var view1 = self.storyboard?.instantiateViewControllerWithIdentifier("loginsuccess") as! UITabBarController
+                var view = self.storyboard?.instantiateViewControllerWithIdentifier("firstView") as! firstView
                 view1.viewDidLoad()
                 
                     for i in windows {
@@ -192,19 +192,19 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/users", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
-                        count2 = responseObject as NSMutableArray!
+                        count2 = responseObject as! NSMutableArray!
                         var num1 : Int = 0
-                        println("zxf")
+                        print("zxf")
                         while(num1<count2?.count)
                         {
                             //println(count2?.count)
                            // print(num1)
-                            gmusername.append(count2?.objectAtIndex(num1)["username"] as NSString)
-                            gmuserpower.append(count2?.objectAtIndex(num1)["userpower"] as NSString)
-                            gmuserpassword.append(count2?.objectAtIndex(num1)["userpassword"] as NSString)
-                            gmuserid.append(count2?.objectAtIndex(num1)["userid"] as NSString)
-                            gmuseremail.append(count2?.objectAtIndex(num1)["useremail"] as NSString)
-                            gmuserphone.append(count2?.objectAtIndex(num1)["userphone"] as NSString)
+                            gmusername.append((count2?.objectAtIndex(num1)["username"] as! NSString) as NSString as String)
+                            gmuserpower.append((count2?.objectAtIndex(num1)["userpower"] as! NSString) as NSString as String)
+                            gmuserpassword.append((count2?.objectAtIndex(num1)["userpassword"] as! NSString) as NSString as String)
+                            gmuserid.append((count2?.objectAtIndex(num1)["userid"] as! NSString) as NSString as String)
+                            gmuseremail.append((count2?.objectAtIndex(num1)["useremail"] as! NSString) as NSString as String)
+                            gmuserphone.append((count2?.objectAtIndex(num1)["userphone"] as! NSString) as NSString as String)
                                                        // println(gmusername[num1])
                             num1++
                         }
@@ -212,10 +212,10 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("gm") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("gm") as! UITabBarController
                     self.presentViewController(view, animated: true, completion: nil)
                     
                 }
@@ -232,16 +232,16 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi3", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
                         //println("success")
-                        count3 = responseObject as NSMutableArray!
+                        count3 = responseObject as! NSMutableArray!
                         var num : Int = 0
                        // mostpinggu = 0
                        // println("123456")
                         while(num < count3?.count){
                             var s : String
                             var p : String
-                            s = count3?.objectAtIndex(num)["id"] as NSString
-                            p = count3?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count3?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count3?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -251,7 +251,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count33++
-                                println(count33)
+                                print(count33)
                             } //= count1?.objectAtIndex(num)["id"] as NSString
                             num++
                            //  println("1111")
@@ -261,10 +261,10 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("salesmantabbar") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("salesmantabbar") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
                 else if(test3 == "评估员")
@@ -280,16 +280,16 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi4", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
                         //println("success")
-                        count4 = responseObject as NSMutableArray!
+                        count4 = responseObject as! NSMutableArray!
                         var num : Int = 0
                         // mostpinggu = 0
-                         println("123456")
+                         print("123456")
                         while(num < count4?.count){
                             var s : String
                             var p : String
-                            s = count4?.objectAtIndex(num)["id"] as NSString
-                            p = count4?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count4?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count4?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -299,7 +299,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count44++
-                                println(count44)
+                                print(count44)
                             }
                             num++
                             //  println("1111")
@@ -309,10 +309,10 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("appraisertabbar") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("appraisertabbar") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
                 else if(test3 == "财务员")
@@ -331,13 +331,13 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         count5 = responseObject as! NSMutableArray!
                         var num : Int = 0
                         // mostpinggu = 0
-                        println("123456")
+                        print("123456")
                         while(num < count5?.count){
                             var s : String
                             var p : String
-                            s = count5?.objectAtIndex(num)["id"] as NSString
-                            p = count5?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count5?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count5?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -347,7 +347,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count55++
-                                println(count55)
+                                print(count55)
                             }
                             //= count1?.objectAtIndex(num)["id"] as NSString
                             num++
@@ -358,10 +358,10 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("moneyView") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("moneyView") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
                 else if(test3 == "文员")
@@ -377,16 +377,16 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi5", parameters: nil, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
                         //println("success")
-                        count6 = responseObject as NSMutableArray!
+                        count6 = responseObject as! NSMutableArray!
                         var num : Int = 0
                         // mostpinggu = 0
-                        println("123456")
+                        print("123456")
                         while(num < count6?.count){
                             var s : String
                             var p : String
-                            s = count6?.objectAtIndex(num)["id"] as NSString
-                            p = count6?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count6?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count6?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -396,7 +396,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count66++
-                                println(count66)
+                                print(count66)
                             }
                             //= count1?.objectAtIndex(num)["id"] as NSString
                             num++
@@ -407,15 +407,15 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("writingView") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("writingView") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
                 else if(test3 == "一级审核估价师")
                 {
-                    println("qqq")
+                    print("qqq")
                     shenfen = 7
                     let manager = AFHTTPRequestOperationManager()
                     var zxf : AFJSONRequestSerializer = AFJSONRequestSerializer()
@@ -427,16 +427,16 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi6", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
                         //println("success")
-                        count7 = responseObject as NSMutableArray!
+                        count7 = responseObject as! NSMutableArray!
                         var num : Int = 0
                         // mostpinggu = 0
-                         println("123456")
+                         print("123456")
                         while(num < count7?.count){
                             var s : String
                             var p : String
-                            s = count7?.objectAtIndex(num)["id"] as NSString
-                            p = count7?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count7?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count7?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -446,7 +446,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count77++
-                                println(count77)
+                                print(count77)
                             }
                             num++
                             //  println("1111")
@@ -456,15 +456,15 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate1") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
                 else if(test3 == "二级审核估价师")
                 {
-                    println("sss")
+                    print("sss")
                     shenfen = 8
                     let manager = AFHTTPRequestOperationManager()
                     var zxf : AFJSONRequestSerializer = AFJSONRequestSerializer()
@@ -473,20 +473,20 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     manager.responseSerializer = fxz
                     var name : String = test2!
                     var params : Dictionary<String,String> = ["secondevaluate" : name]
-                    println(params)
+                    print(params)
                     manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/hi8", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                         responseObject: AnyObject!) in
-                        println("success")
-                        count9 = responseObject as NSMutableArray!
+                        print("success")
+                        count9 = responseObject as! NSMutableArray!
                         var num : Int = 0
                         // mostpinggu = 0
-                         println("123456")
+                         print("123456")
                         while(num < count9?.count){
                             var s : String
                             var p : String
-                            s = count9?.objectAtIndex(num)["id"] as NSString
-                            p = count9?.objectAtIndex(num)["yearmonth"] as NSString
-                            var ss : Int! = s.toInt()
+                            s = count9?.objectAtIndex(num)["id"] as! NSString as String
+                            p = count9?.objectAtIndex(num)["yearmonth"] as! NSString as String
+                            var ss : Int! = Int(s)
                             if (ss >= mostpinggu)
                             {
                                 mostpinggu = ss
@@ -496,7 +496,7 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                             {
                                 pinggu.append(s) //= count1?.objectAtIndex(num)["id"] as NSString
                                 count99++
-                                println(count99)
+                                print(count99)
                             }
                             num++
                             //  println("1111")
@@ -506,10 +506,10 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                         failure: { (operation: AFHTTPRequestOperation!,
                             error: NSError!) in
                             //Handle Error
-                            println(error)
-                            println(operation.responseString)
+                            print(error)
+                            print(operation.responseString)
                     })
-                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate2") as UITabBarController
+                    let view = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate2") as! UITabBarController
                     self.presentViewController(view , animated: true, completion: nil)
                 }
             }
@@ -525,8 +525,8 @@ class ViewController: UIViewController , UIAlertViewDelegate {
             }, failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
             }
         else
@@ -536,13 +536,13 @@ class ViewController: UIViewController , UIAlertViewDelegate {
                     alert.message = "账号不存在"
                     alert.addButtonWithTitle("ok")
                     alert.show()
-                    println("222")
+                    print("222")
                 }
             }, failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
             })
         
    

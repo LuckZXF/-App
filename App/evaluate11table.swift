@@ -23,7 +23,7 @@ class evaluate11table : UITableViewController,UIAlertViewDelegate {
         // searchbar.placeholder = "输入初评编号搜索"
         while num < count99 {
             self.items?.addObject("1")
-            println(num)
+            print(num)
             arr.insert(pinggu[num], atIndex: 0)
             num++
             
@@ -58,7 +58,7 @@ class evaluate11table : UITableViewController,UIAlertViewDelegate {
     
     //  }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item21", forIndexPath: indexPath) as evaluate11cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item21", forIndexPath: indexPath) as! evaluate11cell
         let n : Int = self.items!.count
         cell.label.text = "\(arr[indexPath.row])"
         //  count++
@@ -78,40 +78,40 @@ class evaluate11table : UITableViewController,UIAlertViewDelegate {
         manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/find6", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) in
             
-            var back = responseObject as NSMutableArray!
+            var back = responseObject as! NSMutableArray!
             
-            let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate2table2") as evaluate22table
+            let view1 = self.storyboard?.instantiateViewControllerWithIdentifier("evaluate2table2") as! evaluate22table
             view1.navigationItem.title = "评估表：\(self.arr[indexPath.row])"
             //liebiao2 = back.objectAtIndex(0) as NSDictionary
-            evaluate22[0] = back.objectAtIndex(0)["firstnum"] as NSString
-            evaluate22[1] = back.objectAtIndex(0)["yearmonth"] as NSString
-            evaluate22[2] = back.objectAtIndex(0)["contact"] as NSString
-            evaluate22[3] = back.objectAtIndex(0)["contactphone"] as NSString
-            evaluate22[4] = back.objectAtIndex(0)["firstunit"] as NSString
-            evaluate22[5] = back.objectAtIndex(0)["secondunit"] as NSString
-            evaluate22[6] = back.objectAtIndex(0)["appraiser"] as NSString
-            evaluate22[7] = back.objectAtIndex(0)["belong"] as NSString
-            evaluate22[8] = back.objectAtIndex(0)["local"] as NSString
-            evaluate22[9] = back.objectAtIndex(0)["areaname"] as NSString
-            evaluate22[10] = back.objectAtIndex(0)["realdate"] as NSString
-            evaluate22[11] = back.objectAtIndex(0)["total"] as NSString
-            evaluate22[12] = back.objectAtIndex(0)["firstevaluate"] as NSString
-            evaluate22[13] = back.objectAtIndex(0)["firstsuggestion"] as NSString
-            evaluate22[14] = back.objectAtIndex(0)["secondsuggestion"] as NSString
-            evaluate22[15] = back.objectAtIndex(0)["reportnum"] as NSString
-            evaluate22[16] = back.objectAtIndex(0)["reportdate"] as NSString
-            evaluate22[17] = back.objectAtIndex(0)["reportstyle"] as NSString
+            evaluate22[0] = back.objectAtIndex(0)["firstnum"] as! String
+            evaluate22[1] = back.objectAtIndex(0)["yearmonth"] as! String
+            evaluate22[2] = back.objectAtIndex(0)["contact"] as! String
+            evaluate22[3] = back.objectAtIndex(0)["contactphone"] as! String
+            evaluate22[4] = back.objectAtIndex(0)["firstunit"] as! String
+            evaluate22[5] = back.objectAtIndex(0)["secondunit"] as! String
+            evaluate22[6] = back.objectAtIndex(0)["appraiser"] as! String
+            evaluate22[7] = back.objectAtIndex(0)["belong"] as! String
+            evaluate22[8] = back.objectAtIndex(0)["local"] as! String
+            evaluate22[9] = back.objectAtIndex(0)["areaname"] as! String
+            evaluate22[10] = back.objectAtIndex(0)["realdate"] as! String
+            evaluate22[11] = back.objectAtIndex(0)["total"] as! String
+            evaluate22[12] = back.objectAtIndex(0)["firstevaluate"] as! String
+            evaluate22[13] = back.objectAtIndex(0)["firstsuggestion"] as! String
+            evaluate22[14] = back.objectAtIndex(0)["secondsuggestion"] as! String
+            evaluate22[15] = back.objectAtIndex(0)["reportnum"] as! String
+            evaluate22[16] = back.objectAtIndex(0)["reportdate"] as! String
+            evaluate22[17] = back.objectAtIndex(0)["reportstyle"] as! String
             
             
-            deliverwho = back.objectAtIndex(0)["deliver"] as NSString
-            deliverwhoid = back.objectAtIndex(0)["id"] as NSString
+            deliverwho = back.objectAtIndex(0)["deliver"] as! String
+            deliverwhoid = back.objectAtIndex(0)["id"] as! String
             self.navigationController?.pushViewController(view1, animated: true)
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //Handle Error
-                println(error)
-                println(operation.responseString)
+                print(error)
+                print(operation.responseString)
         })
     }
     

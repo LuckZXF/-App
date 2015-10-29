@@ -29,7 +29,7 @@ class firstevaluateView : UITableViewController {
         return firstevaluate.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item7", forIndexPath: indexPath) as firstevaluatecell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item7", forIndexPath: indexPath) as! firstevaluatecell
         //cell. .text = appraiser[indexPath.row]
         cell.firstlabel.text = firstevaluate[indexPath.row]
         return cell

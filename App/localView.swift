@@ -24,15 +24,15 @@ class localView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[11] = local.text
+        liebiao1[11] = local.text!
         }
         else if (shenfen == 3)
         {
-            salesman2[9] = local.text
+            salesman2[9] = local.text!
         }
         else if(shenfen == 4)
         {
-            appraiser2[9] = local.text
+            appraiser2[9] = local.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

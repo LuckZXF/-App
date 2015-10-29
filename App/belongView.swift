@@ -23,11 +23,11 @@ class belongView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[10] = belong.text
+        liebiao1[10] = belong.text!
         }
         else if(shenfen == 3)
         {
-            salesman2[8] = belong.text
+            salesman2[8] = belong.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

@@ -25,11 +25,11 @@ class firstunitView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[6] = firstunit.text
+        liebiao1[6] = firstunit.text!
         }
         else if (shenfen == 3)
         {
-            salesman2[4] = firstunit.text
+            salesman2[4] = firstunit.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

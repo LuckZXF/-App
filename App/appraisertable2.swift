@@ -24,7 +24,7 @@ class appraisertable2 : UITableViewController,UIAlertViewDelegate {
             alert.message = "您当前未修改过数据不用保存"
             alert.addButtonWithTitle("ok")
             alert.show()
-            println("ok")
+            print("ok")
             
         }
         else{
@@ -47,11 +47,11 @@ class appraisertable2 : UITableViewController,UIAlertViewDelegate {
             params.updateValue(deliverwhoid!, forKey: "id")
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/appraiser", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["result"] as NSString
+                print("success")
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["result"] as! String
                 if(panduan == "yes"){
-                     println("OK")
+                     print("OK")
                     let alert = UIAlertView()
                     alert.title = "恭喜"
                     alert.message = "评估单已提交保存"
@@ -63,8 +63,8 @@ class appraisertable2 : UITableViewController,UIAlertViewDelegate {
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
         }
     }
@@ -88,7 +88,7 @@ class appraisertable2 : UITableViewController,UIAlertViewDelegate {
         return appraiser1.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item14", forIndexPath: indexPath) as appraisertable2cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item14", forIndexPath: indexPath) as! appraisertable2cell
         cell.firstlabel.text = appraiser1[indexPath.row]
         // cell.secondlabel.text = count1?.objectAtIndex(index)["id"] as NSString/
         cell.secondlabel.text = appraiser2[indexPath.row]
@@ -106,49 +106,49 @@ class appraisertable2 : UITableViewController,UIAlertViewDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 2)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactView") as contactView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactView") as! contactView
             view.navigationItem.title = "联系人"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 3)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactphoneView") as contactphoneView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("contactphoneView") as! contactphoneView
             view.navigationItem.title = "联系电话"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 9)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("localView") as localView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("localView") as! localView
             view.navigationItem.title = "房产坐落地"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 10)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstremarkView") as firstremarkView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstremarkView") as! firstremarkView
             view.navigationItem.title = "备注（评估员）"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 11)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("areanameView") as areanameView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("areanameView") as! areanameView
             view.navigationItem.title = "小区名称"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 12)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("dateViewController") as dateViewController
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("dateViewController") as! dateViewController
             view.navigationItem.title = "实际评估日期"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 13)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("outtimeView") as outtimeView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("outtimeView") as! outtimeView
             view.navigationItem.title = "外勤工作时间"
             self.navigationController?.pushViewController(view, animated: true)
         }
         if(indexPath.row == 15)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstevaluateView") as firstevaluateView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstevaluateView") as! firstevaluateView
             view.navigationItem.title = "一级审核评估师"
             self.navigationController?.pushViewController(view, animated: true)
         }

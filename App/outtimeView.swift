@@ -23,11 +23,11 @@ class outtimeView: UIViewController {
     }
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1){
-        liebiao1[15] = outtime.text
+        liebiao1[15] = outtime.text!
         }
         else if(shenfen == 4)
         {
-            appraiser2[13] = outtime.text
+            appraiser2[13] = outtime.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

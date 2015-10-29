@@ -29,7 +29,7 @@ class appraiserView : UITableViewController {
         return appraiser.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item6", forIndexPath: indexPath) as appraisercell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item6", forIndexPath: indexPath) as! appraisercell
         //cell. .text = appraiser[indexPath.row]
         cell.appraiserlabel.text = appraiser[indexPath.row]
         return cell

@@ -24,15 +24,15 @@ class reportnumView : UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[21] = reportnum.text
+        liebiao1[21] = reportnum.text!
         }
         else if(shenfen == 5)
         {
-            money2[15] = reportnum.text
+            money2[15] = reportnum.text!
         }
         else if(shenfen == 6)
         {
-            writing2[12] = reportnum.text
+            writing2[12] = reportnum.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

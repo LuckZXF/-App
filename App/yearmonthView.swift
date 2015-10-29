@@ -14,6 +14,7 @@ class yearmonthView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         yearmonth.keyboardType = UIKeyboardType.NumberPad
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,11 +26,11 @@ class yearmonthView: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         if(shenfen == 1)
         {
-        liebiao1[3] = yearmonth.text
+        liebiao1[3] = yearmonth.text!
         }
         else if(shenfen == 3)
         {
-            salesman2[1] = yearmonth.text
+            salesman2[1] = yearmonth.text!
         }
         isSave = true
         self.navigationController?.popViewControllerAnimated(true)

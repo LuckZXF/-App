@@ -22,13 +22,14 @@ class dateViewController : UIViewController {
             datelabel.text = appraiser2[12]
         }
         //定义一个显示activityIndicatorView的按钮
-        let button1 = UIButton.buttonWithType(.System) as UIButton
+        let button1 = UIButton(type: UIButtonType.System) as UIButton
+        
         button1.frame = CGRectMake(self.view.frame.width/2-200, 200, 400, 50)
         button1.setTitle("回到当前日期", forState: UIControlState.Normal)
         button1.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button1.tag = 1
         //定义一个隐藏activityIndicatorView
-        let button2  = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button2 = UIButton(type: UIButtonType.System) as UIButton
         button2.frame = CGRectMake(self.view.frame.width/2-200, 250, 400, 50)
         button2.setTitle("选中该日期", forState: UIControlState.Normal)
         button2.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -37,10 +38,10 @@ class dateViewController : UIViewController {
         datePicker = UIDatePicker(frame: CGRectMake(0, self.view.frame.height - 350, self.view.frame.width, 300))
         datePicker.datePickerMode = UIDatePickerMode.DateAndTime
         datePicker.minuteInterval = 1
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var maxDate = dateFormatter.dateFromString("2099-08-01 08:00:00")
-        var minDate = dateFormatter.dateFromString("1999-03-01 08:00:00")
+        let maxDate = dateFormatter.dateFromString("2099-08-01 08:00:00")
+        let minDate = dateFormatter.dateFromString("1999-03-01 08:00:00")
         datePicker.maximumDate = maxDate
         datePicker.minimumDate = minDate
         datePicker.date = NSDate()
@@ -76,6 +77,6 @@ class dateViewController : UIViewController {
         }
     }
     func datePickerValueChange(sender: UIDatePicker) {
-        println("date select:\(sender.date)")
+        print("date select:\(sender.date)")
     }
 }

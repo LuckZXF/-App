@@ -24,7 +24,7 @@ class evaluate2table : UITableViewController,UIAlertViewDelegate{
             alert.message = "您当前未修改过数据不用保存"
             alert.addButtonWithTitle("ok")
             alert.show()
-            println("ok")
+            print("ok")
             
         }
         else{
@@ -43,8 +43,8 @@ class evaluate2table : UITableViewController,UIAlertViewDelegate{
             manager.POST("http://www.zhaoxifan.sinaapp.com/index.php/Home/Index/firstevaluate", parameters: params, success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 //println("success")
-                let responseDict = responseObject as NSDictionary!
-                var panduan : String = responseDict["result"] as NSString
+                let responseDict = responseObject as! NSDictionary!
+                var panduan : String = responseDict["result"] as! String
                 if(panduan == "yes"){
                     // println("OK")
                     let alert = UIAlertView()
@@ -58,8 +58,8 @@ class evaluate2table : UITableViewController,UIAlertViewDelegate{
                 failure: { (operation: AFHTTPRequestOperation!,
                     error: NSError!) in
                     //Handle Error
-                    println(error)
-                    println(operation.responseString)
+                    print(error)
+                    print(operation.responseString)
             })
         }
     }
@@ -83,7 +83,7 @@ class evaluate2table : UITableViewController,UIAlertViewDelegate{
         return evaluate1.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item20", forIndexPath: indexPath) as evaluate2cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("item20", forIndexPath: indexPath) as! evaluate2cell
         cell.firstlabel.text = evaluate1[indexPath.row]
         // cell.secondlabel.text = count1?.objectAtIndex(index)["id"] as NSString/
         cell.secondlabel.text = evaluate2[indexPath.row]
@@ -101,7 +101,7 @@ class evaluate2table : UITableViewController,UIAlertViewDelegate{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 10)
         {
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstsuggestView") as firstsuggestView
+            let view = self.storyboard?.instantiateViewControllerWithIdentifier("firstsuggestView") as! firstsuggestView
             view.navigationItem.title = "一级审核意见"
             self.navigationController?.pushViewController(view, animated: true)
         }
