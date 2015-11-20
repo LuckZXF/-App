@@ -11,7 +11,7 @@ import UIKit
 class thirdView : UIViewController {
     
     @IBAction func exitbtn(sender: AnyObject) {
-        //sss
+        //111
          test = nil
         test0 = nil
         test2 = nil
